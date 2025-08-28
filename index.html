@@ -1,58 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Registration Form</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <title>Student Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <h2>Registration Form</h2>
-        <form id="registrationForm">
-            <label>First Name:</label>
-            <input type="text" id="firstName" required><br>
+  <div class="form-container">
+    <h2>Student Registration Form</h2>
+    <form id="registrationForm">
+      <div class="row">
+        <label>First Name:</label>
+        <input type="text" id="firstName" required>
+        <label>Last Name:</label>
+        <input type="text" id="lastName" required>
+      </div>
 
-            <label>Last Name:</label>
-            <input type="text" id="lastName" required><br>
+      <div class="row">
+        <label>Father's Name:</label>
+        <input type="text" id="fatherName" required>
+        <label>Mother's Name:</label>
+        <input type="text" id="motherName" required>
+      </div>
 
-            <label>Father's Name:</label>
-            <input type="text" id="fatherName" required><br>
+      <div class="row">
+        <label>Date of Birth:</label>
+        <input type="date" id="dob" required>
+        <label>Gender:</label>
+        <select id="gender" required>
+          <option value="">Select</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
 
-            <label>Mother's Name:</label>
-            <input type="text" id="motherName" required><br>
+      <div class="row">
+        <label>Address:</label>
+        <textarea id="address" required></textarea>
+      </div>
 
-            <label>Gender:</label>
-            <input type="radio" name="gender" value="Male" required> Male
-            <input type="radio" name="gender" value="Female"> Female <br>
+      <div class="row">
+        <label>Qualification:</label>
+        <input type="text" id="qualification" required>
+        <label>Mobile Number:</label>
+        <input type="tel" id="mobile" pattern="[0-9]{10}" required>
+      </div>
 
-            <label>Date of Birth:</label>
-            <input type="date" id="dob" required><br>
+      <div class="row">
+        <label>Email:</label>
+        <input type="email" id="email" required>
+        <label>Password:</label>
+        <input type="password" id="password" required>
+      </div>
 
-            <label>Address:</label>
-            <textarea id="address" required></textarea><br>
+      <!-- Fixed Upload Row -->
+      <div class="upload-row">
+        <div class="upload-box">
+          <label>Passport Photo:</label>
+          <input type="file" id="photo" accept="image/*" required>
+        </div>
+        <div class="upload-box">
+          <label>Signature:</label>
+          <input type="file" id="signature" accept="image/*" required>
+        </div>
+      </div>
 
-            <label>Qualification:</label>
-            <input type="text" id="qualification" required><br>
+      <div class="row center">
+        <button type="submit" class="btn green">Submit</button>
+        <button type="reset" class="btn red">Reset</button>
+      </div>
+    </form>
+  </div>
 
-            <label>Upload Passport Photo:</label>
-            <input type="file" id="photo" accept="image/*" required><br>
-
-            <label>Upload Signature:</label>
-            <input type="file" id="signature" accept="image/*" required><br>
-
-            <label>Email:</label>
-            <input type="email" id="email" required><br>
-
-            <label>Password:</label>
-            <input type="password" id="password" required><br>
-
-            <label>Mobile Number:</label>
-            <input type="tel" id="mobile" pattern="[0-9]{10}" required><br>
-
-            <button type="submit">Submit</button>
-            <button type="reset">Reset</button>
-        </form>
+  <!-- Popup -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span id="closePopup">&times;</span>
+      <h3>Submitted Details</h3>
+      <div id="popupDetails"></div>
+      <div class="row center">
+        <button id="downloadPDF" class="btn green">Download PDF</button>
+      </div>
     </div>
+  </div>
 </body>
 </html>
