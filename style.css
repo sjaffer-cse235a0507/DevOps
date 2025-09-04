@@ -1,6 +1,6 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f7f7f7;
+  background: #ffe6f2;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -9,7 +9,7 @@ body {
 }
 
 .form-container {
-  background: #fff;
+  background: #ffe6f2;
   padding: 25px 30px;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
